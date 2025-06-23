@@ -38,3 +38,11 @@ git clone https://github.com/UmmItOS/packages
 cd pen-packages/bruteforce-luks
 makepkg -si
 ```
+
+## Cleanup package script
+
+To clean up the package directory after building, you can use the provided script:
+
+```bash
+./cleanup.sh
+```
