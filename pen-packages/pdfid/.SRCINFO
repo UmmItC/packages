@@ -1,0 +1,13 @@
+pkgbase = pdfid
+	pkgdesc = Tool to test a PDF file and identify PDF documents that contain JavaScript or execute an action when opened
+	pkgver = 0.2.10
+	pkgrel = 1
+	url = https://www.kali.org/tools/pdfid/
+	arch = any
+	license = custom:public-domain
+	depends = python3
+	optdepends = python-pyzipper: Enhanced ZIP file support for password-protected archives
+	source = pdfid-0.2.10.tar.gz::https://gitlab.com/kalilinux/packages/pdfid/-/archive/kali/0.2.10-0kali1/pdfid-kali-0.2.10-0kali1.tar.gz
+	sha256sums = 7383a5abb9893279465111d7d983a9365c18ab7bff8bd67bc0d0b809eb5b095e
+
+pkgname = pdfid

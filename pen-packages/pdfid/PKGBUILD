@@ -1,0 +1,25 @@
+# Maintainer: UmmIt <git@ummit.dev>
+pkgname=pdfid
+pkgver=0.2.10
+pkgrel=1
+pkgdesc="Tool to test a PDF file and identify PDF documents that contain JavaScript or execute an action when opened"
+arch=('any')
+url="https://www.kali.org/tools/pdfid/"
+license=('custom:public-domain')
+depends=('python3')
+optdepends=('python-pyzipper: Enhanced ZIP file support for password-protected archives')
+source=("$pkgname-$pkgver.tar.gz::https://gitlab.com/kalilinux/packages/pdfid/-/archive/kali/$pkgver-0kali1/$pkgname-kali-$pkgver-0kali1.tar.gz")
+sha256sums=('7383a5abb9893279465111d7d983a9365c18ab7bff8bd67bc0d0b809eb5b095e')
+
+check() {
+    cd "$srcdir/$pkgname-kali-$pkgver-0kali1"
+    python -m py_compile pdfid.py
+}
+
+package() {
+    cd "$srcdir/$pkgname-kali-$pkgver-0kali1"
+    
+    # Install the main script
+    install -Dm755 pdfid.py "$pkgdir/usr/bin/pdfid"
+    install -Dm644 debian/copyright "$pkgdir/usr/share/licenses/$pkgname/copyright"
+}
