@@ -1,0 +1,18 @@
+pkgbase = bruteforce-luks
+	pkgdesc = Try to find the password of a LUKS encrypted volume
+	pkgver = 1.4.1
+	pkgrel = 1
+	url = https://github.com/glv2/bruteforce-luks
+	arch = x86_64
+	arch = i686
+	arch = armv7h
+	arch = aarch64
+	license = GPL3
+	makedepends = autoconf
+	makedepends = automake
+	makedepends = libtool
+	depends = cryptsetup
+	source = bruteforce-luks-1.4.1.tar.gz::https://github.com/glv2/bruteforce-luks/archive/refs/tags/1.4.1.tar.gz
+	sha256sums = 80ca37ddf54923376cbf2963295083d25effe41addb3da0e6eccc31eaf1a1880
+
+pkgname = bruteforce-luks

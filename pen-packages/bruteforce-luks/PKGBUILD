@@ -1,0 +1,38 @@
+# Maintainer: UmmIt <git@ummit.dev>
+pkgname=bruteforce-luks
+pkgver=1.4.1
+pkgrel=1
+pkgdesc="Try to find the password of a LUKS encrypted volume"
+arch=('x86_64' 'i686' 'armv7h' 'aarch64')
+url="https://github.com/glv2/bruteforce-luks"
+license=('GPL3')
+depends=('cryptsetup')
+makedepends=('autoconf' 'automake' 'libtool')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/glv2/bruteforce-luks/archive/refs/tags/$pkgver.tar.gz")
+sha256sums=('80ca37ddf54923376cbf2963295083d25effe41addb3da0e6eccc31eaf1a1880')
+
+build() {
+    cd "$srcdir/$pkgname-$pkgver"
+    
+    ./autogen.sh
+    
+    ./configure --prefix=/usr
+    make
+}
+
+check() {
+    cd "$srcdir/$pkgname-$pkgver"
+    # make check
+    echo "Skipping tests - it can be very time consuming, so we'll skip them :)"
+}
+
+package() {
+    cd "$srcdir/$pkgname-$pkgver"
+    make DESTDIR="$pkgdir" install
+    
+    # Install documentation
+    install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+    install -Dm644 AUTHORS "$pkgdir/usr/share/doc/$pkgname/AUTHORS"
+    install -Dm644 ChangeLog "$pkgdir/usr/share/doc/$pkgname/ChangeLog"
+    install -Dm644 NEWS "$pkgdir/usr/share/doc/$pkgname/NEWS"
+}
