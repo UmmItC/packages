@@ -1,6 +1,6 @@
 # UmmIt Packages
 
-This repository contains various packages for UmmItOS with AUR PKGBUILD powered.
+This repository contains various packages for UmmItOS with Arch Linux PKGBUILD powered.
 
 ## Directory Structure
 
