@@ -1,0 +1,21 @@
+# Build artifacts
+*.tar.xz
+*.tar.gz
+*.tar.bz2
+*.pkg.tar.xz
+*.pkg.tar.zst
+pkg/
+src/
+
+# Makepkg artifacts
+*.log
+
+# Editor files
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db 
